@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<groupId>cec52191-4ed0-4483-b855-66fc19a800e1</groupId>
 	<artifactId>japa-sapi-ver</artifactId>
-	<version>1.0.7</version>
+	<version>1.0.8</version>
 	<packaging>mule-application</packaging>
-
 	<name>japa-sapi</name>
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
 		<app.runtime>4.8.1</app.runtime>
 		<mule.maven.plugin.version>4.1.0</mule.maven.plugin.version>
 	</properties>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -34,6 +29,8 @@
 					<cloudhub2Deployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>4.8.1</muleVersion>
+						<username>${env.PLATFORMUSERNAME}</username>
+						<password>${env.PLATFORMPASSWORD}</password>
 						<provider>MC</provider>
 						<environment>Dev</environment>
 						<target>Cloudhub-US-East-2</target>
@@ -52,7 +49,6 @@
 			</plugin>
 		</plugins>
 	</build>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.mule.connectors</groupId>
@@ -67,7 +63,6 @@
 			<classifier>mule-plugin</classifier>
 		</dependency>
 	</dependencies>
-
 	<repositories>
 		<repository>
 			<id>anypoint-exchange-v3</id>
@@ -88,7 +83,6 @@
 			<layout>default</layout>
 		</repository>
 	</repositories>
-
 	<pluginRepositories>
 		<pluginRepository>
 			<id>mulesoft-releases</id>
@@ -108,5 +102,4 @@
 			<layout>default</layout>
 		</repository>
 	</distributionManagement>
-
 </project>
