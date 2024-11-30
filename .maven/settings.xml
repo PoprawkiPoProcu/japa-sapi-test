@@ -6,8 +6,8 @@
 	<servers>
 		<server>
 			<id>my.anypoint.credentials</id>
-			<username>${anypoint.username}</username>
-			<password>${anypoint.password}!</password>
+			<username>rulasiuk6</username>
+			<password>1994Piotrek!</password>
 		</server>
 	</servers>
 </settings>
