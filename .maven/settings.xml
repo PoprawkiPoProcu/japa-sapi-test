@@ -6,8 +6,8 @@
 	<servers>
 		<server>
 			<id>my.anypoint.credentials</id>
-			<username>${{ secrets.anypoint_platform_username }}</username>
-			<password>${{ secrets.anypoint_platform_password }}</password>
+			<username>${client.id}</username>
+			<password>${client.secret}</password>
 		</server>
 	</servers>
 </settings>
