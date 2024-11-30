@@ -29,6 +29,4 @@ jobs:
           mvn clean deploy --settings .maven/settings.xml -DskipMunitTests
       - name: Deploy to CloudHub 2.0
         run: |
-          mvn clean deploy --settings .maven/settings.xml -DskipMunitTests -DmuleDeploy \
-          -Danypoint.username="${{ secrets.ANYPOINT_USERNAME }}" \
-          -Danypoint.password="${{ secrets.ANYPOINT_PASSWORD }}"
+          mvn clean deploy --settings .maven/settings.xml -DskipMunitTests -DmuleDeploy
