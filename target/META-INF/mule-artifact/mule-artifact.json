@@ -1,0 +1,27 @@
+{
+  "configs": [
+    "global.xml",
+    "japa-sapi.xml"
+  ],
+  "secureProperties": [],
+  "supportedJavaVersions": [],
+  "redeploymentEnabled": true,
+  "name": "cec52191-4ed0-4483-b855-66fc19a800e1:japa-sapi-ver4:1.0.0",
+  "minMuleVersion": "4.7.0",
+  "requiredProduct": "MULE_EE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedPackages": [],
+      "exportedResources": [
+        "global.xml",
+        "japa-sapi.xml",
+        "log4j2.xml"
+      ]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}
