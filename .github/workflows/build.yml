@@ -3,7 +3,10 @@ name: Publish to Exchange & Deploy to CH2.0
 on:
   push:
     branches: [ main ]
-    
+env:
+  PLATFORM_USERNAME: ${{ secrets.PLATFORMUSERNAME }}
+  PLATFORM_PASSWORD: ${{ secrets.PLATFORMPASSWORD }}
+
 jobs:         
   build:
     runs-on: ubuntu-latest
@@ -26,9 +29,7 @@ jobs:
       
       - name: Publish to Exchange
         run: |
-          mvn clean deploy --settings .maven/settings.xml -DskipMunitTests\
-          -Danypoint.password="${{ secrets.ANYPOINT_PLATFORM_PASSWORD }}"
+          mvn clean deploy --settings .maven/settings.xml -DskipMunitTests
       - name: Deploy to CloudHub 2.0
         run: |
-          mvn clean deploy --settings .maven/settings.xml -DskipMunitTests -DmuleDeploy\
-          -Danypoint.password="${{ secrets.ANYPOINT_PLATFORM_PASSWORD }}"
+          mvn clean deploy --settings .maven/settings.xml -DskipMunitTests -DmuleDeploy
