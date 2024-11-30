@@ -28,9 +28,9 @@ jobs:
         run: |
           mvn deploy --settings .maven/settings.xml -DskipMunitTests \
           -Danypoint.username="${{ secrets.ANYPOINT_USERNAME }}" \
-          -Danypoint.password="${{ secrets.ANYPOINT_PASSWORD }}" 
+          -Danypoint.password="${{ secrets.ANYPOINT_PASSWORD }}"
       - name: Deploy to CloudHub 2.0
         run: |
           mvn deploy --settings .maven/settings.xml -DskipMunitTests -DmuleDeploy \
           -Danypoint.username="${{ secrets.ANYPOINT_USERNAME }}" \
-          -Danypoint.password="${{ secrets.ANYPOINT_PASSWORD }}" 
+          -Danypoint.password="${{ secrets.ANYPOINT_PASSWORD }}"

@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>cec52191-4ed0-4483-b855-66fc19a800e1</groupId>
-	<artifactId>japa-sapi-ver5</artifactId>
+	<artifactId>japa-sapi-ver6</artifactId>
 	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
 
