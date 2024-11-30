@@ -27,10 +27,8 @@ jobs:
       - name: Publish to Exchange
         run: |
           mvn clean deploy --settings .maven/settings.xml -DskipMunitTests\
-          -Dclient.id="${{ secrets.ANYPOINT_PLATFORM_USERNAME }}" \
-          -Dclient.secret="${{ secrets.ANYPOINT_PLATFORM_PASSWORD }}"
+          -Danypoint.password="${{ secrets.ANYPOINT_PLATFORM_PASSWORD }}"
       - name: Deploy to CloudHub 2.0
         run: |
           mvn clean deploy --settings .maven/settings.xml -DskipMunitTests -DmuleDeploy\
-          -Dclient.id="${{ secrets.ANYPOINT_PLATFORM_USERNAME }}" \
-          -Dclient.secret="${{ secrets.ANYPOINT_PLATFORM_PASSWORD }}"
+          -Danypoint.password="${{ secrets.ANYPOINT_PLATFORM_PASSWORD }}"
