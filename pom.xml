@@ -4,7 +4,7 @@
 
 	<groupId>cec52191-4ed0-4483-b855-66fc19a800e1</groupId>
 	<artifactId>japa-sapi-ver</artifactId>
-	<version>1.0.4</version>
+	<version>1.0.5</version>
 	<packaging>mule-application</packaging>
 
 	<name>japa-sapi</name>
