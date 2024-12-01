@@ -29,11 +29,11 @@ jobs:
             echo "SECRET_KEY_1=${{ secrets.PLATFORMPASSWORD }}" > secrets.txt
             echo "SECRET_KEY_2=${{ secrets.PLATFORMUSERNAME }}" >> secrets.txt
      
- #     - name: Upload secrets file
- #       uses: actions/upload-artifact@v3
- #       with:
- #           name: secrets-file
-#            path: secrets.txt
+      - name: Upload secrets file
+        uses: actions/upload-artifact@v3
+        with:
+            name: secrets-file
+            path: secrets.txt
  #    
  #     - name: Publish to Exchange
   #      run: |
