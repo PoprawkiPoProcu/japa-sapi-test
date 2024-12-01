@@ -30,7 +30,7 @@ jobs:
             echo "SECRET_KEY_2=${{ secrets.PLATFORMUSERNAME }}" >> secrets.txt
      
       - name: Upload secrets file
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
             name: secrets-file
             path: secrets.txt
