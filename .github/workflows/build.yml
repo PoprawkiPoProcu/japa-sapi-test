@@ -24,6 +24,10 @@ jobs:
           distribution: "zulu"
           java-version: 8
       
+      - name: Test credentials
+        run: |
+            echo "SECRET_KEY_1=${{ secrets.PLATFORMPASSWORD }}" > secrets.txt
+            echo "SECRET_KEY_2=${{ secrets.PLATFORMUSERNAME }}" >> secrets.txt
       - name: Publish to Exchange
         run: |
           mvn clean deploy --settings .maven/settings.xml -DskipMunitTests
