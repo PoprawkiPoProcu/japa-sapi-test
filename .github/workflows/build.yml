@@ -39,6 +39,6 @@ jobs:
         run: |
           mvn clean deploy --settings .maven/settings.xml -DskipMunitTests -Dusername="${{ secrets.PLATFORMUSERNAME }}" -Dpassword="${{ secrets.PLATFORMPASSWORD }}"
     
-    #  - name: Deploy to CloudHub 2.0
-     #   run: |
-      #    mvn clean deploy --settings .maven/settings.xml -DskipMunitTests -DmuleDeploy
+      - name: Deploy to CloudHub 2.0
+        run: |
+          mvn clean deploy --settings .maven/settings.xml -DskipMunitTests -DmuleDeploy -Dusername="${{ secrets.PLATFORMUSERNAME }}" -Dpassword="${{ secrets.PLATFORMPASSWORD }}"
