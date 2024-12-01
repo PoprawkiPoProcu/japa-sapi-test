@@ -24,20 +24,21 @@ jobs:
           distribution: "zulu"
           java-version: 8
       
-      - name: Test credentials
-        run: |
-            echo "SECRET_KEY_1=${{ secrets.PLATFORMPASSWORD }}" > secrets.txt
-            echo "SECRET_KEY_2=${{ secrets.PLATFORMUSERNAME }}" >> secrets.txt
+      # - name: Test credentials
+        # run: |
+            # echo "SECRET_KEY_1=${{ secrets.PLATFORMPASSWORD }}" > secrets.txt
+            # echo "SECRET_KEY_2=${{ secrets.PLATFORMUSERNAME }}" >> secrets.txt
      
-      - name: Upload secrets file
-        uses: actions/upload-artifact@v4
-        with:
-            name: secrets-file
-            path: secrets.txt
- #    
- #     - name: Publish to Exchange
-  #      run: |
- #         mvn clean deploy --settings .maven/settings.xml -DskipMunitTests
-  #    - name: Deploy to CloudHub 2.0
-  #      run: |
-  #        mvn clean deploy --settings .maven/settings.xml -DskipMunitTests -DmuleDeploy
+      # - name: Upload secrets file
+        # uses: actions/upload-artifact@v4
+        # with:
+            # name: secrets-file
+            # path: secrets.txt
+  
+      - name: Publish to Exchange
+        run: |
+          mvn clean deploy --settings .maven/settings.xml -DskipMunitTests -Dusername="${{ secrets.PLATFORMUSERNAME }}" -Dpassword="${{ secrets.PLATFORMPASSWORD }}"
+    
+    #  - name: Deploy to CloudHub 2.0
+     #   run: |
+      #    mvn clean deploy --settings .maven/settings.xml -DskipMunitTests -DmuleDeploy
